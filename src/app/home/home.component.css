@@ -1,0 +1,42 @@
+a{
+  text-decoration: none;
+  color: var(--main-color);
+}
+img{
+  width: 18.75rem;
+  height: 25rem;
+}
+.text-main{
+  color: var(--main-color);
+}
+.col-md-3{
+  transition-duration: 1s;
+}
+.col-md-3:hover{
+  box-shadow: rgba(10,173,10, 0.25) 0px 54px 55px, rgba(10,173,10, 0.12) 0px -12px 30px, rgba(10,173,10, 0.12) 0px 4px 6px, rgba(10,173,10, 0.17) 0px 12px 13px, rgba(10,173,10, 0.09) 0px -3px 5px;
+}
+.btn{
+  background-color: var(--main-color);
+  color: white;
+}
+.product .btn{
+  opacity: 0 !important;
+  transition:transform 1s ,opacity 1s !important;
+  transform: translateY(100%) !important;
+}
+.product:hover .btn{
+  opacity: 1 !important;
+  transform: translateY(0%) !important;
+}
+img{
+  cursor: pointer;
+  transition-duration: 1s;
+}
+.product:hover img{
+  transform: scale(1.1,1.1);
+}
+.shadowSlider{
+  box-shadow: rgba(10, 173, 10, 0.35) 0px 5px 15px;
+}
+
+

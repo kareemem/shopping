@@ -1,0 +1,54 @@
+<div class="my-3">
+  <h4>Add Product Now :</h4>
+  <form class="my-3 w-75 mx-auto" [formGroup]="addForm" (ngSubmit)="addProduct(addForm)">
+    <div>
+      <label for="name">Your Name :</label>
+      <input class="form-control mt-1" id="name" type="text" placeholder="enter your name..." formControlName="name">
+      <div  *ngIf="addForm.get('name')?.errors && addForm.get('name')?.touched" class="alert alert-danger">
+        <p class="m-0" *ngIf="addForm.get('name')?.getError('required')">Name is Required</p>
+      </div>
+    </div>
+    <div class="mt-3">
+      <label for="nameProduct">product Name :</label>
+      <input class="form-control mt-1" id="nameProduct" type="text" placeholder="enter name product..." formControlName="title">
+      <div  *ngIf="addForm.get('title')?.errors && addForm.get('title')?.touched" class="alert alert-danger">
+        <p class="m-0" *ngIf="addForm.get('title')?.getError('required')">Title is Required</p>
+      </div>
+    </div>
+    <div class="mt-3 selectProduct">
+      <h6>Please select the product type :</h6>
+      <div *ngFor="let item of categoryList">
+        <input [id]="item.name" class="d-none" type="radio" [value]="item.id" formControlName="catID"/>
+        <label [for]="item.name" class="pointer border test px-3 p-2 my-1 rounded-pill">{{item.name}}</label>
+      </div>
+      <div  *ngIf="addForm.get('catID')?.errors && addForm.get('catID')?.touched" class="alert alert-danger">
+        <p class="m-0" *ngIf="addForm.get('catID')?.getError('required')">Select Product is Required</p>
+      </div>
+    </div>
+    <div class="mt-3">
+      <label for="img">Img :</label>
+      <input class="form-control mt-1" id="img" type="text" placeholder="enter url image product..." formControlName="image">
+      <div  *ngIf="addForm.get('image')?.errors && addForm.get('image')?.touched" class="alert alert-danger">
+        <p class="m-0" *ngIf="addForm.get('image')?.getError('required')">Image is Required</p>
+      </div>
+    </div>
+    <div class="mt-3">
+      <label for="description">Description :</label>
+      <input class="form-control mt-1" id="description" type="text" placeholder="enter description Product..." formControlName="description">
+      <div  *ngIf="addForm.get('description')?.errors && addForm.get('description')?.touched" class="alert alert-danger">
+        <p class="m-0" *ngIf="addForm.get('description')?.getError('required')">Description is Required</p>
+      </div>
+    </div>
+    <div class="mt-3">
+      <label for="price">Price :</label>
+      <input class="form-control mt-1" id="price" type="number" placeholder="enter price Product..." formControlName="price">
+      <div  *ngIf="addForm.get('price')?.errors && addForm.get('price')?.touched" class="alert alert-danger">
+        <p class="m-0" *ngIf="addForm.get('price')?.getError('pattern')">The price exceeded a million or there are symbols between the numbers</p>
+        <p class="m-0" *ngIf="addForm.get('price')?.getError('required')">Price is Required</p>
+      </div>
+    </div>
+    <div class="mt-4">
+      <button class="btn d-block ms-auto" [disabled]="addForm.invalid">Add Product</button>
+    </div>
+  </form>
+</div>

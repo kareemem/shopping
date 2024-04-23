@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+  <div class="container-md">
+    <a class="navbar-brand fw-bold" href="#">
+      <span><i class="fa-solid fa-cart-shopping"></i></span>
+      Shopping
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLinkActive="linkActive border rounded-2" routerLink="/home" *ngIf="showToggleLink">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/addProduct" routerLinkActive="linkActive border rounded-2" *ngIf="showToggleLink">Add Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/phone" routerLinkActive="linkActive border rounded-2" *ngIf="showToggleLink">Phone</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/tv" routerLinkActive="linkActive border rounded-2" *ngIf="showToggleLink">TV Screens</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/laptop" routerLinkActive="linkActive border rounded-2" *ngIf="showToggleLink">Laptop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/sports" routerLinkActive="linkActive border rounded-2" *ngIf="showToggleLink">Sports</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/fashion" routerLinkActive="linkActive border rounded-2" *ngIf="showToggleLink">Fashion</a>
+        </li>
+        <li class="nav-item position-relative">
+          <a class="nav-link" routerLink="/cart" routerLinkActive="linkActive border rounded-2" *ngIf="showToggleLink">
+            <i class="fa-solid fa-cart-shopping fa-lg"></i>
+            <span *ngIf="counter!==0" class="position-absolute badge text-light top-0 end-0 bg-main">{{counter}}</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pointer" *ngIf="showToggleLink" (click)="logout()">Logout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/register" routerLinkActive="linkActive border rounded-2" *ngIf="!showToggleLink">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login" routerLinkActive="linkActive border rounded-2" *ngIf="!showToggleLink" >Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,18 @@
+<div class="my-3">
+  <div *ngFor="let item of productDetails" class="p-2 border-bottom">
+    <div class="d-flex justify-content-between align-items-center">
+      <div>
+        <img class="w-100" [src]="item.image" alt="img details product">
+      </div>
+      <div class="ms-3">
+        <p class="h6 text-main">{{item.title}}</p>
+        <p>
+        <span class="text-main">Description :</span> <br> {{item.description}}
+        </p>
+        <p><span class="text-main">Price :</span>{{item.price|currency:'EGP'}}</p>
+        <p><span class="text-main">Product Add BY :</span>{{item.name}}</p>
+        <button class="btn btn-success w-100" (click)="buy(item.id)">+Add</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+i{
+  color: var(--main-color);
+}
+.linkActive{
+  border-color: var(--main-color) !important;
+  transform: scale(1.1,1.1);
+}
+
+.bg-main{
+background-color: var(--main-color);
+}
